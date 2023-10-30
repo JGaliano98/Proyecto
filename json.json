@@ -1,0 +1,72 @@
+{
+    "Examen" : {
+        "id": 1,
+        "preguntas": [
+
+            {
+                "id": 1,
+                "Categoria": "Agentes",
+                "Dificultad": "Baja",
+                "Enunciado": "¿Debe un conductor realizar una prueba de alcoholemia si es requerido por los agentes?",
+                "Recurso": "imagenes/foto.png",
+                "respuestas": [
+                    {
+                        "id": 1,
+                        "respuesta": "A) Únicamente si está involucrado en un accidente."
+                    },{
+                        "id": 2,
+                        "respuesta": "B) Únicamente si está involucrado en un accidente o el conductor ha cometido una infracción."
+                    }, {
+                        "id": 3,
+                        "respuesta": "C) Sí."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "Categoria" : "Señales",
+                "Dificultad": "Media",
+                "Enunciado": "¿Cambia el significado de un semáforo con luz roja fija que tenga encima una flecha negra?",
+                "Recurso": "imagenes/foto.png",
+                "respuestas": [
+                    {
+                        "id": 1,
+                        "respuesta": "A) Sí, cambia totalmente el significado ya que lo anula"
+                    },
+                    {
+                        "id": 2,
+                        "respuesta": "B) Sí, pero únicamente en vías muy transitadas"
+                    },
+                    {
+                        "id": 3,
+                        "respuesta": "C) No, pero lo limita al movimiento indicado por la flecha"
+                    }
+                ]
+
+            },
+            {
+                "id": 3,
+                "Categoria" : "Señales",
+                "Dificultad": "Media",
+                "Enunciado": "¿Conduciendo un ciclomotor, ¿puede circular a partir de la señal?",
+                "Recurso": "imagenes/foto.png",
+                "respuestas": [
+                    {
+                        "id": 1,
+                        "respuesta": "A) Sí."
+                    },
+                    {
+                        "id": 2,
+                        "respuesta": "B) No, porque prohíbe el paso a todos los vehículos de dos ruedas."
+                    },
+                    {
+                        "id": 3,
+                        "respuesta": "C) No, porque prohíbe circular a los vehículos de dos ruedas con motor."
+                    }
+                ]
+
+            }
+
+        ]
+    }
+}
