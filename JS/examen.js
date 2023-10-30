@@ -14,7 +14,7 @@ window.addEventListener("load", function(){
 
     
 
-    fetch("Forms/generaExamen.html")
+    fetch("Forms/generaPreguntas.html")
             .then(x=>x.text())
             .then(y=>{
                 
@@ -30,8 +30,8 @@ window.addEventListener("load", function(){
 
                             var pregAux=pregunta.cloneNode(true); //CloneNode hace copia exacta de la estructura de la pregunta. Con el true, haces tambien copia del contenido de la pregunta.
                             pregAux.getElementsByClassName("enunciado")[0].innerHTML=y[i].enunciado;
-                            var foto = document.createElement("img");
-                            foto.src = y[i].URL;
+                            var foto = document.createElement("img"); //Creamos el elemento imagen
+                            foto.src = y[i].URL; //Cogemos la foto y la mostramos.
                             pregAux.getElementsByClassName("foto")[0].appendChild(foto);
                             pregAux.getElementsByClassName("respuesta1")[0].innerHTML=y[i].respuesta1; 
                             pregAux.getElementsByClassName("respuesta2")[0].innerHTML=y[i].respuesta2; 

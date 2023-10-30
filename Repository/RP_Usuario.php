@@ -1,8 +1,9 @@
 <?php
 
-    require_once "../Entities/User.php";
+    require_once "../Entities/Usuario.php";
+    require_once "Conexion.php";
 
-    class RP_User {
+    class RP_Usuario {
 
 
         public static function MostrarTodo(){
@@ -16,11 +17,11 @@
 
                 $i=0;
 
-                $id=$tuplas->id;
+                $ID_Usuario=$tuplas->ID_Usuario;
                 $usuario=$tuplas->nombre;
                 $contraseña=$tuplas->contraseña;
                 $rol=$tuplas->rol;
-                $User=new USER($id,$usuario,$contraseña,$rol);
+                $User=new Usuario ($ID_Usuario,$usuario,$contraseña,$rol);
                 $array[$i]=$User;
                 $i++;
             }
@@ -41,11 +42,11 @@
                 $i=0;
 
 
-                $id=$tuplas->id;
+                $ID_Usuario=$tuplas->ID_Usuario;       
                 $usuario=$tuplas->nombre;
                 $contraseña=$tuplas->contraseña;
                 $rol=$tuplas->rol;
-                $User=new USER($id,$usuario,$contraseña,$rol);
+                $User=new Usuario($ID_Usuario,$usuario,$contraseña,$rol);
                 $array[$i]=$User;
                 $i++;
             }
@@ -77,7 +78,7 @@
 
             $conexion=Conexion::AbreConexion();
 
-            $resultado=$conexion->exec("INSERT INTO USUARIO VALUES ($objeto->id, $objeto->nombre, $objeto->contraseña, $objeto->rol)");
+            $resultado=$conexion->exec("INSERT INTO USUARIO VALUES ($objeto->ID_Usuario, $objeto->nombre, $objeto->contraseña, $objeto->rol)");
 
 
         }

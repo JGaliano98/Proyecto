@@ -1,6 +1,6 @@
 <?php
 
-class User {
+class Usuario {
     // Atributos
     private $ID_usuario;
     private $nombre;
