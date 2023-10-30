@@ -29,7 +29,10 @@ window.addEventListener("load", function(){
                         for (let i=0; i<y.length;i++){
 
                             var pregAux=pregunta.cloneNode(true); //CloneNode hace copia exacta de la estructura de la pregunta. Con el true, haces tambien copia del contenido de la pregunta.
-                            pregAux.getElementsByClassName("Enunciado")[0].innerHTML=y[i].Enunciado;
+                            pregAux.getElementsByClassName("enunciado")[0].innerHTML=y[i].enunciado;
+                            var foto = document.createElement("img");
+                            foto.src = y[i].URL;
+                            pregAux.getElementsByClassName("foto")[0].appendChild(foto);
                             pregAux.getElementsByClassName("respuesta1")[0].innerHTML=y[i].respuesta1; 
                             pregAux.getElementsByClassName("respuesta2")[0].innerHTML=y[i].respuesta2; 
                             pregAux.getElementsByClassName("respuesta3")[0].innerHTML=y[i].respuesta3; 
@@ -39,4 +42,6 @@ window.addEventListener("load", function(){
                     })
 
             })
+
+
 })

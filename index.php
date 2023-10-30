@@ -8,6 +8,11 @@
 </head>
 <body>
 
+
+    <div class="Encabezado">
+        <h1>Bienvenid@ Profesor!</h1>
+    </div>
+
     <div id="examen">
 
     </div>
