@@ -78,8 +78,11 @@
 
             $conexion=Conexion::AbreConexion();
 
-            $resultado=$conexion->exec("INSERT INTO USUARIO VALUES ($objeto->ID_Usuario, $objeto->nombre, $objeto->contraseña, $objeto->rol)");
+            $nombre=$objeto->getNombre();
+            $contraseña=$objeto->getContraseña();
 
+
+            $resultado=$conexion->exec("INSERT INTO usuario (nombre,contaseña,rol) VALUES ('$nombre' ,'$contraseña' , null)");
 
         }
 

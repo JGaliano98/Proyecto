@@ -1,6 +1,7 @@
 <?php
 
  include "../Repository/RP_Usuario.php";
+ require_once "../Helpers/funcionesRegistro.php";
 
  $usuario=$_POST['usuario'];
  $contraseña=$_POST['contraseña'];
@@ -15,12 +16,7 @@ if ($registrar){
 
     if($_SERVER["REQUEST_METHOD"]="POST"){
 
-        $ID_usuario=1;
-
-        $objeto = new Usuario($ID_usuario,$usuario,$contraseña,$rol);
-
-       
-        $resultado = RP_Usuario::InsertaObjeto($objeto);
+        Registro::registraUsuario($usuario,$contraseña,$rol);
 
         echo "Usuario insertado con éxito";
 
@@ -31,16 +27,15 @@ if($acceder){
 
     if($_SERVER["REQUEST_METHOD"]="POST"){
 
-
         header("Location:login.php");
 
     }
-
-
 }
 
-
 ?>
+
+
+
 
 
 

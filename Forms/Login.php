@@ -1,14 +1,11 @@
 <?php
 
-session_start();
+include "Helpers/funcionesLogin.php";
 
 
-if (isset($_POST['usuario']) && isset($_POST['contraseña'])){
+$usuario = $_POST['usuario'];
+$contraseña = $_POST['contraseña'];
 
-    $usuario = $_SESSION['usuario'];
-    $contraseña = $_SESSION['contraseña'];
-
-}
 
 $acceder = isset($_POST['acceder']);
 $registrarse = isset($_POST['registrarse']);
@@ -18,18 +15,20 @@ if ($acceder){
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        //$resultado == compruebaUsuario(); //TODO METODO COMPRUEBAUSUARIO.
+        $resultado == Login::existeUsuario($usuario,$contraseña); //TODO METODO COMPRUEBAUSUARIO.
 
         if ($resultado === true){
 
-            if ($rol === "Alumno"){
+            echo "Ha accedido.";
 
-                //TODO ACCESO AL ROL DE ALUMNO
+            // if ($rol === "Alumno"){
 
-            }elseif($rol === "Profesor"){
+            //     //TODO ACCESO AL ROL DE ALUMNO
 
-                //TODO Accesp al rol de profesor.
-            }
+            // }elseif($rol === "Profesor"){
+
+            //     //TODO Accesp al rol de profesor.
+            // }
 
 
             //TODO hacer método login y método iniciarSesion.
@@ -79,7 +78,5 @@ if ($registrarse){
             <br>
         </form>
     </center>
-    
-
 </body>
 </html>
