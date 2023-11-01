@@ -1,6 +1,6 @@
 <?php
 
- include "../Repository/RP_Usuario.php";
+ require_once "../Repository/RP_Usuario.php";
  require_once "../Helpers/funcionesRegistro.php";
 
  $usuario=$_POST['usuario'];

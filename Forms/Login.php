@@ -1,7 +1,6 @@
 <?php
 
-include "Helpers/funcionesLogin.php";
-
+require_once "../Helpers/funcionesLogin.php";
 
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
@@ -15,7 +14,9 @@ if ($acceder){
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        $resultado == Login::existeUsuario($usuario,$contraseña); //TODO METODO COMPRUEBAUSUARIO.
+
+
+        $resultado = LOGIN::existeUsuario($usuario,$contraseña); //TODO METODO COMPRUEBAUSUARIO.
 
         if ($resultado === true){
 
