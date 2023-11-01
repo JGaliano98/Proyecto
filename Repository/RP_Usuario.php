@@ -15,15 +15,14 @@
 
             while($tuplas=$resultado->fetch(PDO::FETCH_OBJ)){
 
-                $i=0;
 
                 $ID_Usuario=$tuplas->ID_Usuario;
                 $usuario=$tuplas->nombre;
                 $contraseña=$tuplas->contraseña;
                 $rol=$tuplas->rol;
                 $User=new Usuario ($ID_Usuario,$usuario,$contraseña,$rol);
-                $array[$i]=$User;
-                $i++;
+                $array[]=$User;
+                
             }
             return $array;
 
@@ -39,7 +38,7 @@
 
             while ($tuplas=$resultado->fetch(PDO::FETCH_OBJ)) {
 
-                $i=0;
+            
 
 
                 $ID_Usuario=$tuplas->ID_Usuario;       
@@ -47,11 +46,36 @@
                 $contraseña=$tuplas->contraseña;
                 $rol=$tuplas->rol;
                 $User=new Usuario($ID_Usuario,$usuario,$contraseña,$rol);
-                $array[$i]=$User;
-                $i++;
+                $array[]=$User;
+            
             }
             return $array;
 
+        }
+
+        public static function BuscaPorUsuario($usuario){
+
+             //Abrimos la conexión
+             $conexion=Conexion::AbreConexion();
+
+             $resultado = $conexion->query("Select * from usuario where nombre='$usuario'");
+ 
+             while ($tuplas=$resultado->fetch(PDO::FETCH_OBJ)) {
+ 
+                 $i=0;
+ 
+ 
+                 $ID_Usuario=$tuplas->ID_Usuario;       
+                 $usuario=$tuplas->nombre;
+                 $contraseña=$tuplas->contraseña;
+                 $rol=$tuplas->rol;
+                 $User=new Usuario($ID_Usuario,$usuario,$contraseña,$rol);
+                 $array[$i]=$User;
+                 $i++;
+             }
+             return $array;
+
+             
         }
 
         public static function BorraPorID($id){
@@ -82,7 +106,7 @@
             $contraseña=$objeto->getContraseña();
 
 
-            $resultado=$conexion->exec("INSERT INTO usuario (nombre,contaseña,rol) VALUES ('$nombre' ,'$contraseña' , null)");
+            $resultado=$conexion->exec("INSERT INTO usuario (nombre,contraseña,rol) VALUES ('$nombre' ,'$contraseña' , null)");
 
         }
 

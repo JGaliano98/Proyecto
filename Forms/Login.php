@@ -1,6 +1,8 @@
 <?php
 
 require_once "../Helpers/funcionesLogin.php";
+require_once "../Repository/RP_Usuario.php";
+require_once "../Entities/Usuario.php";
 
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
@@ -20,16 +22,42 @@ if ($acceder){
 
         if ($resultado === true){
 
-            echo "Ha accedido.";
 
-            // if ($rol === "Alumno"){
+            $usuario = RP_Usuario::BuscaPorUsuario($usuario);
 
-            //     //TODO ACCESO AL ROL DE ALUMNO
 
-            // }elseif($rol === "Profesor"){
+            foreach($usuario as $dato){
 
-            //     //TODO Accesp al rol de profesor.
-            // }
+                $rol=$dato->getRol();
+
+            
+
+                if ($rol == null){
+
+                    echo "El usuario no tiene un rol asignado. Por favor, espere a ser aceptado por el administrador.";
+        
+                }elseif($rol == "Alumno"){
+    
+                    header("Location: alumno.php");
+    
+                }elseif($rol == "Profesor"){
+    
+                    header("Location: profesor.php");
+                    
+                }elseif($rol == "Administrador"){
+
+                    header("Location: administrador.php");
+
+                }
+
+
+            }
+
+
+
+          
+
+           
 
 
             //TODO hacer método login y método iniciarSesion.

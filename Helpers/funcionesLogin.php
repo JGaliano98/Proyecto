@@ -25,7 +25,11 @@ require_once "../Repository/RP_Usuario.php";
             return $existe;
         }
         
-        
+        public static function estaLogueado($usuario){
+
+            
+
+        }
         
         
         
