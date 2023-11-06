@@ -14,7 +14,7 @@ window.addEventListener("load", function(){
 
     
 
-    fetch("Forms/generaPreguntas.html")
+    fetch("generaPreguntas.html")
             .then(x=>x.text())
             .then(y=>{
                 
@@ -23,7 +23,7 @@ window.addEventListener("load", function(){
                
                 var pregunta = contenedor.firstChild; //entro a su hijo y me quedo con el
 
-                fetch("json.json")
+                fetch("../json.json")
                     .then(x=>x.json()) //Mete la pregunta en el json
                     .then(y=>{  //la y es la pregunta. Aqui se descarga la pregunta y la recorre en el for
                         for (let i=0; i<y.length;i++){
@@ -37,11 +37,33 @@ window.addEventListener("load", function(){
                             pregAux.getElementsByClassName("respuesta2")[0].innerHTML=y[i].respuesta2; 
                             pregAux.getElementsByClassName("respuesta3")[0].innerHTML=y[i].respuesta3; 
                             
+                            var resps = pregAux.getElementsByClassName("respuestas");
+                            for(let j = 0; j < resps.length; j++)
+                            {
+                                resps[j].name += i;
+                            }
+                            
+
+                            pregAux.getElementsByClassName("botonBorrar")[0].onclick = function()
+                            {
+                                var auxPadre = this;
+                                while (!auxPadre.classList.contains("pregunta")) 
+                                {
+                                    auxPadre = auxPadre.parentNode; 
+                                }
+
+                                var respuestasMar = auxPadre.getElementsByClassName("respuestas");
+                                for(let i = 0; i < respuestasMar.length; i++)
+                                {
+                                    respuestasMar[i].checked = false;
+                                }
+                            } 
+
+
                             divExamen.appendChild(pregAux);
                         }
                     })
 
             })
-
 
 })

@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.datos {
+    border: 5px solid black; /* Establece el grosor, el tipo y el color del borde */
+    border-radius: 5%;
+    padding: 20px; /* Agrega un espacio interno alrededor del contenido */
+    width: 400px; /* Establece el ancho del recuadro */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #57BA54;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fondo {
+
+    
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-image: url('../Styles/imagenes/GettyImages-925160278-1046x616.jpg');
+    background-size: cover; /*Ajusta el tamaño de la imagen para cubrir todo el fondo;*/
+    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+    width: 100%; /* Ancho del div al 100% del ancho de la ventana */
+    height: 100%; /* Altura del div al 100% de la altura de la ventana */
+}
+
+#cierraSesion{
+
+    width: 100px; /* Ancho del div */
+  height: 100px; /* Alto del div */
+  position: fixed; /* Fijar la posición del div */
+  top: 35px; /* Alineación en la parte superior */
+  right: 35px; 
+
+}
+.fondoRegistro{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-image: url('./imagenes/logo.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+    width: 100%; /* Ancho del div al 100% del ancho de la ventana */
+    height: 100%; /* Altura del div al 100% de la altura de la ventana */
+}

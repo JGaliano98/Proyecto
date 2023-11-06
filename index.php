@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="JS/examen.js"></script>
-</head>
-<body>
+<?php
+class Principal
+{
+    public static function main()
+    {
+       require_once 'Vistas/layout.php';
+     
+    }
+}
+Principal::main();
+?>
 
 
-    <div class="Encabezado">
-        <h1>Bienvenid@ Profesor!</h1>
-    </div>
-
-    <div id="examen">
-
-    </div>
-</body>
-</html>
+<a id="enlace" href="?menu=login"><input type="button" id="btnAcceso" value="Acceso Login"></a>

@@ -1,63 +1,49 @@
 <?php
 
- require_once "../Repository/RP_Usuario.php";
- require_once "../Helpers/funcionesRegistro.php";
+//  require_once "../Repository/RP_Usuario.php";
+//  require_once "../Helpers/funcionesRegistro.php";
 
- $usuario=$_POST['usuario'];
- $contraseña=$_POST['contraseña'];
- $rol=$_POST['rol'];
+require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
+Autoload::Autoload();
 
- $registrar = isset($_POST['registrar']);
- $acceder = isset ($_POST['acceder']);
-
-
-if ($registrar){
+$registrar = isset($_POST['registrarReg']);
+$acceder = isset($_POST['accederReg']);
 
 
-    if($_SERVER["REQUEST_METHOD"]="POST"){
+if($registrar)
+{
+    $usuario=$_POST['usuario'];
+    $contraseña=$_POST['contraseña'];
+    $rol=$_POST['rol'];
 
-        Registro::registraUsuario($usuario,$contraseña,$rol);
+    funcionesRegistro::registraUsuario($usuario,$contraseña,$rol);
+    echo "Usuario Registrado con éxito";
 
-        echo "Usuario insertado con éxito";
-
-    }
 }
 
-if($acceder){
-
-    if($_SERVER["REQUEST_METHOD"]="POST"){
-
-        header("Location:login.php");
-
-    }
+if($acceder)
+{
+    header("Location: ?menu=login");
+    exit;
 }
 
 ?>
 
+<center>
 
+    <div class="fondoRegistro">
+        <div class="datos">
+            <form action = '?menu=registro' enctype="multipart/form-data"  method="post">
+                <h1>REGISTRO DE USUARIOS</h1>
+                <br>
+                <label>NOMBRE DE USUARIO: <input type="text" name="usuario" id="usuario"> </label><br><br>
+                <label>CONTRASEÑA: <input type="text" name="contraseña" id="contraseña"> </label><br><br>
+                <label>ROL: <input type="text" name="rol"></label><br><br>
+                <input type="submit" value="Registrar" name="registrarReg">
+                <input type="submit" value="Acceder" name="accederReg">
+            </form>
 
+        </div>
+    </div>
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulario registro</title>
-</head>
-<body>
-
-    <form method="post" enctype="multipart/form-data">
-        <h1>REGISTRO DE USUARIOS</h1>
-        <br>
-        <label>NOMBRE DE USUARIO: <input type="text" name="usuario" id="usuario"> </label><br><br>
-        <label>CONTRASEÑA: <input type="text" name="contraseña" id="contraseña"> </label><br><br>
-        <label>ROL: <input type="text" name="rol" value="rol"></label><br><br>
-        <input type="submit" value="Registrar" name="registrar">
-        <input type="submit" value="Acceder" name="acceder">
-
-    </form>
-    
-</body>
-</html>
+</center>

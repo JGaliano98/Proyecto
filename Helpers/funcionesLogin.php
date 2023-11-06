@@ -1,8 +1,13 @@
 <?php
 
-require_once "../Repository/RP_Usuario.php";
+//require_once "../Repository/RP_Usuario.php";
 
-    class Login {
+require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
+Autoload::Autoload();
+
+    class funcionesLogin {
+
+        private static $usuarios = array();
 
         public static function existeUsuario($usuario, $contraseña){
             // Obtiene los datos de la base de datos
@@ -13,7 +18,6 @@ require_once "../Repository/RP_Usuario.php";
             
             // Itera sobre los objetos en el array de datos
             foreach ($datos as $dato) {
-                // Asegúrate de que los nombres de los métodos coincidan con los nombres de los métodos de la clase Usuario
                 if ($dato->getNombre() == $usuario && $dato->getContraseña() == $contraseña) {
                     // Si hay coincidencia, cambia la variable a verdadero y termina el bucle
                     $existe = true;
@@ -23,17 +27,32 @@ require_once "../Repository/RP_Usuario.php";
             
             // Devuelve true si se encuentra una coincidencia, de lo contrario, devuelve false
             return $existe;
+        }   
+
+
+        public static function logIn($user)
+        {
+            session::iniciarSesion();
+            session::guardarSesion('user', $user); 
+        }
+
+        public static function estaLogueado($clave)
+        {
+            return session::existeValorSesion($clave);
+        }
+
+        public static function logOut($ruta)
+        {
+            session::cerrarSesion();
+
+            if(!empty($ruta))
+            {
+                header("Location: $ruta");
+                exit;
+            }
         }
         
-        public static function estaLogueado($usuario){
-
-            
-
-        }
         
-        
-        
-
         //FALTA IDENTIFICA Y USUARIOLOGUEADO
 
     }

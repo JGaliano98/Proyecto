@@ -1,7 +1,9 @@
 <?php
 
-    require_once "../Entities/Usuario.php";
-    require_once "Conexion.php";
+     //require_once "../Entities/Usuario.php";
+     //require_once "Conexion.php";
+
+     require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
 
     class RP_Usuario {
 

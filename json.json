@@ -17,5 +17,35 @@
         "respuesta1": "A) 0,25 miligramos de alcohol por litro de aire espirado durante dos años.",
         "respuesta2": "B) 0,30 gramos de alcohol por litro de sangre durante dos años.",
         "respuesta3": "C) 0,15 miligramos de alcohol por litro de sangre durante un año."
+    },
+
+    {
+        "id": 3,
+        "categoria": "Agentes",
+        "URL": "https://practicatest.com/views/layout/default/img/tests/B/27cb6038fafa6e4340e885f118bbeadb.jpg",
+        "enunciado": "¿Qué deben hacer los conductores cuando un agente de tráfico les indica detenerse?",
+        "respuesta1": "A) Ignorar la señal y continuar conduciendo.",
+        "respuesta2": "B) Detenerse inmediatamente en un lugar seguro.",
+        "respuesta3": "C) Continuar a alta velocidad para evadir al agente."
+    },
+    {
+        "id": 4,
+        "categoria": "Agentes",
+        "URL": "https://practicatest.com/views/layout/default/img/tests/B/28566493f61042ceba43fb8a23716d64.jpg",
+        "enunciado": "¿Cuál es la función principal de un agente de tráfico en un accidente de tráfico?",
+        "respuesta1": "A) Tomar fotografías del accidente.",
+        "respuesta2": "B) Facilitar el intercambio de información entre las partes involucradas.",
+        "respuesta3": "C) No intervenir y esperar a que llegue la ambulancia."
+    },
+    {
+        "id": 5,
+        "categoria": "Agentes",
+        "URL": "https://practicatest.com/views/layout/default/img/tests/B/1bc788a657e0445e82fc5ae04cea90bc.png",
+        "enunciado": "¿Puede un agente de tráfico inspeccionar el interior de su vehículo sin su consentimiento?",
+        "respuesta1": "A) Sí, en cualquier momento sin necesidad de consentimiento.",
+        "respuesta2": "B) No, solo con una orden judicial.",
+        "respuesta3": "C) Sí, pero solo si el conductor está bajo la influencia del alcohol."
     }
+
+
 ]

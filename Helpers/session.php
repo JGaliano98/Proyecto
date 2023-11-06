@@ -1,34 +1,35 @@
 <?php
 
-class SESSION{
+class session{
 
-    public static function iniciarSesion($clave, $usuario){
+    public static function iniciarSesion(){
 
         session_start();
-
-        $_SESSION[$clave]=$usuario;
-
     }
 
     public static function cerrarSesion(){
 
         session_destroy();
-
-        header("Location: ../Forms/login.php");
-
     }
 
-    public static function leerValorSesion($clave){
+    public static function guardarSesion($clave, $objeto){
 
-        $usuario = $_SESSION[$clave];
-
-        return $usuario;
-
+        $_SESSION[$clave] = $objeto; //Ahora t lo explico
     }
 
+    public static function leerSesion($clave){
+
+        return $_SESSION[$clave];
+    }
+
+    public static function existeSesion($clave){
+
+        return isset($_SESSION[$clave]);
+    }
 
 
 }
+
 
 
 ?>

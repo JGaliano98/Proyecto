@@ -1,8 +1,9 @@
 <?php
 
-require_once "../Entities/Usuario.php";
+require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
+Autoload::autoload();
 
-class Registro {
+class funcionesRegistro {
 
     public static function registraUsuario($usuario, $contraseña,$rol){
 
