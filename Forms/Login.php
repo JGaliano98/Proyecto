@@ -35,9 +35,6 @@ if ($acceder){
 
                 $rol=$dato->getRol();
 
-
-            
-
                 if ($rol == null){
 
                     echo "El usuario no tiene un rol asignado. Por favor, espere a ser aceptado por el administrador.";
@@ -58,15 +55,13 @@ if ($acceder){
                     exit;
 
                 }
-
-
             }
 
             
         } 
         elseif ($resultado === false){
 
-            echo "Credenciales inválidas.";
+            echo '<h1 id="credenciales">Credenciales inválidas.</h1>';   
         }
 
     }
@@ -86,19 +81,19 @@ if ($registrarse){
 ?>
 
 <center>
-    <div class="fondo">
-        <div class="datos">
-            <form  action = '?menu=login' method="post">
-                <h1>AUTOESCUELA LAS FUENTEZUELAS</h1> <br>
-                <label>USUARIO: <input type="text" name="usuario" id="usuario">  </label><br><br>
-                <label>CONTRASEÑA: <input type="password" name="contraseña" id="contraseña"> </label><br><br>
-                <input type="submit" value="Acceder" name="accederLog"> <input type="submit" value="Registrarse" name="registrarse">
-                <br><br>
-                <a href="http://localhost/Proyecto/index.php?menu=olvidaContraseña">¿Ha olvidado su contraseña?</a>
-                <br>
-            </form>
-        </div>
+    
+    <div class="datos">
+        <form  action = '?menu=login' method="post">
+            <h1>AUTOESCUELA LAS FUENTEZUELAS</h1> <br>
+            <label>USUARIO: <input type="text" name="usuario" id="usuario">  </label><br><br>
+            <label>CONTRASEÑA: <input type="password" name="contraseña" id="contraseña"> </label><br><br>
+            <input type="submit" value="Acceder" name="accederLog"> <input type="submit" value="Registrarse" name="registrarse">
+            <br><br>
+            <a href="http://localhost/Proyecto/index.php?menu=olvidaContraseña">¿Ha olvidado su contraseña?</a>
+            <br>
+        </form>
     </div>
+   
 </center>
 
 

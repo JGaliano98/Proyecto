@@ -26,15 +26,11 @@ if($volver){
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Ha olvidado su contraseña?</title>
-</head>
-<body style="background-color: #57BA54;">
-    <center>
+
+
+<center>
+
+    <div class="datos">
         <form method="post" enctype="multipart/form-data">
             <h1>¿Ha olvidado su contraseña?</h1>
             <br>
@@ -42,7 +38,15 @@ if($volver){
             <input type="submit" value="Enviar" name="enviar">
             <input type="submit" value="Volver" name="volver">
         </form>
-    </center>
+    </div>
 
-</body>
-</html>
+</center>
+
+
+
+
+<style>
+    #enlace{
+        display: none;
+    }
+</style>

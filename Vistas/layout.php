@@ -5,21 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SANIMAL S.L.</title>
+    <title>Autoescuela Fuentezuelas</title>
     <link rel="stylesheet" href="Styles/estilos.css">
 </head>
 
 <body id = "fondo">
-    <section>
+
+    
+    <div class="fondoInicio">
+        <?php
+            require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Vistas/header.php';
+            ?>
+
+
         <div id="cuerpo">
             <?php
                 require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Vistas/enrutador.php';
             ?>
         </div>
-        
-    </section>
 
-    
+        <div class="btnAccesoLogin">
+            <a id="enlace" href="?menu=login"><input type="button" class="btnAcceder" id="btnAcceso" value="Acceso Login"></a>
+        </div>
+        <div class="divFooter">
+            <?php
+            require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Vistas/footer.php';
+            ?>
+        </div>
+
+    </div>
+        
+   
+
+
 
 </body>
 

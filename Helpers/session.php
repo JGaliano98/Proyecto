@@ -1,5 +1,8 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
+Autoload::Autoload();
+
 class session{
 
     public static function iniciarSesion(){

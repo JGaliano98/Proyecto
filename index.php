@@ -9,6 +9,3 @@ class Principal
 }
 Principal::main();
 ?>
-
-
-<a id="enlace" href="?menu=login"><input type="button" id="btnAcceso" value="Acceso Login"></a>

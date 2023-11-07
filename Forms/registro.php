@@ -17,7 +17,7 @@ if($registrar)
     $rol=$_POST['rol'];
 
     funcionesRegistro::registraUsuario($usuario,$contraseña,$rol);
-    echo "Usuario Registrado con éxito";
+    echo "<h1>Usuario Registrado con éxito</h1>";
 
 }
 
@@ -31,19 +31,25 @@ if($acceder)
 
 <center>
 
-    <div class="fondoRegistro">
-        <div class="datos">
-            <form action = '?menu=registro' enctype="multipart/form-data"  method="post">
-                <h1>REGISTRO DE USUARIOS</h1>
-                <br>
-                <label>NOMBRE DE USUARIO: <input type="text" name="usuario" id="usuario"> </label><br><br>
-                <label>CONTRASEÑA: <input type="text" name="contraseña" id="contraseña"> </label><br><br>
-                <label>ROL: <input type="text" name="rol"></label><br><br>
-                <input type="submit" value="Registrar" name="registrarReg">
-                <input type="submit" value="Acceder" name="accederReg">
-            </form>
 
-        </div>
+    <div class="datos">
+        <form action = '?menu=registro' enctype="multipart/form-data"  method="post">
+            <h1>REGISTRO DE USUARIOS</h1>
+            <br>
+            <label>NOMBRE DE USUARIO: <input type="text" name="usuario" id="usuario"> </label><br><br>
+            <label>CONTRASEÑA: <input type="text" name="contraseña" id="contraseña"> </label><br><br>
+            <label>ROL: <input type="text" name="rol"></label><br><br>
+            <input type="submit" value="Registrar" name="registrarReg">
+            <input type="submit" value="Acceder" name="accederReg">
+        </form>
+
     </div>
 
+
 </center>
+
+<style>
+    #enlace{
+        display: none;
+    }
+</style>

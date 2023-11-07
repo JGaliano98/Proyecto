@@ -4,18 +4,21 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
 Autoload::Autoload();
 
 $cierraSesion = isset($_POST['cierraSesion']);
+$muestraExamen = isset($_POST['muestraExamen']);
 
 if($cierraSesion){
 
-    echo "Hola";
-
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-        funcionesLogin::logOut("login.php");
-
-    }
+    funcionesLogin::logOut("?menu=login");
 
 }
+
+if($muestraExamen){
+
+    header("Location: ?menu=muestraExamen");
+
+}
+
+
 
 ?>
 
@@ -31,15 +34,28 @@ if($cierraSesion){
 </head>
 <body style="background-color: #57BA54;">
 
-    <form method="Post">
+    <form method="post">
 
-    <h1>Bienvenid@ Alumn@!</h1>
+        <div class="divTitulo">
+            <h1>Bienvenid@ Alumn@!</h1>
+        </div>
+        
 
         <div id="cierraSesion">
             <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+        </div>
+
+        <div id="muestraExamen">
+            <input type="submit" value="Mostrar examen" name="muestraExamen">
         </div>
 
     </form>
 
 </body>
 </html>
+
+<style>
+    #enlace{
+        display: none;
+    }
+</style>

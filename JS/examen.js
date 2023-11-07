@@ -14,7 +14,7 @@ window.addEventListener("load", function(){
 
     
 
-    fetch("generaPreguntas.html")
+    fetch("../Proyecto/Forms/generaPreguntas.html")
             .then(x=>x.text())
             .then(y=>{
                 
@@ -23,7 +23,7 @@ window.addEventListener("load", function(){
                
                 var pregunta = contenedor.firstChild; //entro a su hijo y me quedo con el
 
-                fetch("../json.json")
+                fetch("../Proyecto/json.json")
                     .then(x=>x.json()) //Mete la pregunta en el json
                     .then(y=>{  //la y es la pregunta. Aqui se descarga la pregunta y la recorre en el for
                         for (let i=0; i<y.length;i++){

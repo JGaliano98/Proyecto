@@ -38,7 +38,7 @@ Autoload::Autoload();
 
         public static function estaLogueado($clave)
         {
-            return session::existeValorSesion($clave);
+            return session::existeSesion($clave);
         }
 
         public static function logOut($ruta)

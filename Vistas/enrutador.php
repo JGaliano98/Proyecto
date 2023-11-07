@@ -24,4 +24,8 @@ if (isset($_GET['menu'])) {
         require_once $rutaBase . '/Forms/profesor.php';
         
     }
+    if ($_GET['menu'] == "muestraExamen") {
+        require_once $rutaBase . '/Forms/muestraExamen.php';
+        
+    }
 }

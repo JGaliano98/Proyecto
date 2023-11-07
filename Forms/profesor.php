@@ -24,3 +24,9 @@
     
 </body>
 </html>
+
+<style>
+    #enlace{
+        display: none;
+    }
+</style>
