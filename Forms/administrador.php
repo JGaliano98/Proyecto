@@ -1,32 +1,41 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
+Autoload::Autoload();
+
+$cierraSesion = isset($_POST['cierraSesion']);
+// $validaUsuarios = isset($_POST['validaUsuarios']);
+$btnSi = isset($_POST['btnSi']);
 
 
-
+if ($cierraSesion) {
+    funcionesLogin::logOut("?menu=login");
+}
 
 ?>
 
+<form method="post">
+    <div class="divTitulo">
+        <h1>Bienvenid@ Administrador!</h1>
+    </div>
 
+    <div id="cierraSesion">
+        <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alumno</title>
-</head>
-<body style="background-color: #57BA54;">
-
-    <h1>Bienvenid@ Administrador!</h1>
-
-    
+    <!-- <div id="validaUsuarios">
+        <input type="submit" value="Valida usuarios" name="validaUsuarios">
+    </div> -->
 
     
-</body>
-</html>
+</form>
+
+
+
 
 
 <style>
     #enlace{
         display: none;
     }
+   
 </style>

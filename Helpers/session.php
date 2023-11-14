@@ -17,7 +17,7 @@ class session{
 
     public static function guardarSesion($clave, $objeto){
 
-        $_SESSION[$clave] = $objeto; //Ahora t lo explico
+        $_SESSION[$clave] = $objeto;
     }
 
     public static function leerSesion($clave){

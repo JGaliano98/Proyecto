@@ -28,4 +28,20 @@ if (isset($_GET['menu'])) {
         require_once $rutaBase . '/Forms/muestraExamen.php';
         
     }
+    if ($_GET['menu'] == "muestraUsuarios") {
+        require_once $rutaBase . '/Forms/muestraUsuarios.php';
+        
+    }
+    if ($_GET['menu'] == "borraUsuarios") {
+        require_once $rutaBase . '/Forms/borraUsuarios.php';
+        
+    }
+    if ($_GET['menu'] == "actualizaUsuarios") {
+        require_once $rutaBase . '/Forms/actualizaUsuarios.php';
+        
+    }
+    if ($_GET['menu'] == "validaUsuarios") {
+        require_once $rutaBase . '/Forms/validaUsuarios.php';
+        
+    }
 }

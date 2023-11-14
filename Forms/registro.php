@@ -52,4 +52,7 @@ if($acceder)
     #enlace{
         display: none;
     }
+    #header{
+        display: none;
+    }
 </style>

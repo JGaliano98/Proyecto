@@ -18,41 +18,34 @@ if($muestraExamen){
 
 }
 
-
-
 ?>
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alumno</title>
-    <link rel="stylesheet" type="text/css" href="../Styles/estilos.css">
-</head>
-<body style="background-color: #57BA54;">
-
-    <form method="post">
-
-        <div class="divTitulo">
-            <h1>Bienvenid@ Alumn@!</h1>
-        </div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
         
+    <div id="navegador">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
 
-        <div id="cierraSesion">
-            <input type="submit" value="Cerrar Sesión" name="cierraSesion">
-        </div>
 
-        <div id="muestraExamen">
-            <input type="submit" value="Mostrar examen" name="muestraExamen">
-        </div>
+    
+</div>
 
-    </form>
 
-</body>
-</html>
+<form method="post">
+
+<div class="divTitulo">
+    <h1>Bienvenid@ Alumn@!</h1>
+</div>
+
+<div id="cierraSesion">
+    <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+</div>
+
+</form>
 
 <style>
     #enlace{

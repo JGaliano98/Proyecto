@@ -64,16 +64,14 @@
  
              while ($tuplas=$resultado->fetch(PDO::FETCH_OBJ)) {
  
-                 $i=0;
- 
  
                  $ID_Usuario=$tuplas->ID_Usuario;       
                  $usuario=$tuplas->nombre;
                  $contraseña=$tuplas->contraseña;
                  $rol=$tuplas->rol;
                  $User=new Usuario($ID_Usuario,$usuario,$contraseña,$rol);
-                 $array[$i]=$User;
-                 $i++;
+                 $array[]=$User;
+
              }
              return $array;
 
@@ -86,7 +84,7 @@
 
             $conexion = Conexion::AbreConexion();
 
-            $resultado = $conexion->exec("Delete from usuario where id=$id");
+            $resultado = $conexion->exec("Delete from usuario where ID_Usuario=$id");
 
         }
 
@@ -94,8 +92,9 @@
 
             $conexion = Conexion::AbreConexion();
 
-            $resultado = $conexion->exec("Update from usuario set nombre=$objeto->nombre, contraseña=$objeto->contraseña, rol=$objeto->rol where id=$id");
+            //$resultado = $conexion->exec("Update usuario set ID_Usuario=$objeto->ID_usuario, nombre=$objeto->nombre, contraseña=$objeto->contraseña, rol=$objeto->rol where ID_Usuario=$id");
 
+            $resultado = $conexion->exec("UPDATE usuario SET nombre='{$objeto->nombre}', contraseña='{$objeto->contraseña}', rol='{$objeto->rol}' WHERE ID_Usuario={$id}");
 
 
         }
@@ -109,6 +108,31 @@
 
 
             $resultado=$conexion->exec("INSERT INTO usuario (nombre,contraseña,rol) VALUES ('$nombre' ,'$contraseña' , null)");
+
+        }
+
+        public static function muestraUsuariosRolNulo(){
+
+            $conexion=Conexion::AbreConexion();
+
+            $resultado = $conexion->query("Select * from usuario where rol is null");
+
+            
+            while ($tuplas=$resultado->fetch(PDO::FETCH_OBJ)) {
+ 
+                
+
+
+                $ID_Usuario=$tuplas->ID_Usuario;       
+                $usuario=$tuplas->nombre;
+                $contraseña=$tuplas->contraseña;
+                $rol=$tuplas->rol;
+                $User=new Usuario($ID_Usuario,$usuario,$contraseña,$rol);
+                $array[]=$User;
+            
+            }
+            return $array;
+
 
         }
 

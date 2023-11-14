@@ -12,7 +12,7 @@ $volver=isset($_POST['volver']);
 
 if($enviar){
 
-    echo "Restablecimiento de contraseña enviado. Por favor, revise su correo.";
+    echo "<h1 id:mensajes'>Restablecimiento de contraseña enviado. Por favor, revise su correo.</h1>";
     exit;
 }
 
@@ -47,6 +47,9 @@ if($volver){
 
 <style>
     #enlace{
+        display: none;
+    }
+    #header{
         display: none;
     }
 </style>

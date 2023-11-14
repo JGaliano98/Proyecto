@@ -1,29 +1,29 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
+Autoload::Autoload();
 
+$cierraSesion = isset($_POST['cierraSesion']);
 
+if($cierraSesion){
+
+    funcionesLogin::logOut("?menu=login");
+
+}
 
 ?>
 
+<form method="post">
 
+    <div class="divTitulo">
+        <h1>Bienvenid@ Profesor!</h1>
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profesor</title>
-</head>
-<body style="background-color: #57BA54;">
+    <div id="cierraSesion">
+        <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+    </div>
 
-    <h1>Bienvenid@ Profesor!</h1>
-
-    
-
-
-    
-</body>
-</html>
+</form>
 
 <style>
     #enlace{

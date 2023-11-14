@@ -23,7 +23,7 @@ body{
     padding: 20px; /* Agrega un espacio interno alrededor del contenido */
     width: 400px; /* Establece el ancho del recuadro */
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #57BA54;
@@ -80,6 +80,8 @@ body{
     padding: 10px;
 }
 
+
+
 #examen{
     position: absolute;
     border: 4px black solid;
@@ -134,6 +136,7 @@ body{
 #header .navbar-nav .nav-item {
     margin-right: 5%; /* Agrega un espacio entre los elementos */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
     list-style-type: none;
    
 }
@@ -155,3 +158,38 @@ body{
     color: rgb(14, 13, 95); /* Establece el color de texto para los enlaces al pasar el ratón por encima */
 }
    
+th, td, tr {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+    
+
+}
+
+#divTablaValidar{
+
+    background-color: #57BA54;
+    border: 1px black solid ;
+    position:absolute;
+    margin-top: 5%;
+    margin-left: 35%;
+    padding: 8px;
+}
+
+#divTablaMostrar{
+
+    background-color: #57BA54;
+    border: 5px black solid ;
+    position:absolute;
+    margin-top: 3%;
+    margin-left: 32%;
+    padding: 8px;
+    
+}
+
+.tablaMostrar td, th{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+}
+

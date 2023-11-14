@@ -26,15 +26,15 @@ if ($acceder){
 
         if ($resultado === true){
 
-
             $usuario = RP_Usuario::BuscaPorUsuario($usuario);
             funcionesLogin::logIn($usuario);
+            
 
 
             foreach($usuario as $dato){
 
                 $rol=$dato->getRol();
-
+                
                 if ($rol == null){
 
                     echo "El usuario no tiene un rol asignado. Por favor, espere a ser aceptado por el administrador.";
@@ -99,6 +99,9 @@ if ($registrarse){
 
 <style>
     #enlace{
+        display: none;
+    }
+    #header{
         display: none;
     }
 </style>

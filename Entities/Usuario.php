@@ -2,10 +2,10 @@
 
 class Usuario {
     // Atributos
-    private $ID_usuario;
-    private $nombre;
-    private $contraseña;
-    private $rol;
+    public $ID_usuario;
+    public $nombre;
+    public $contraseña;
+    public $rol;
 
     // Constructor
     public function __construct($ID_usuario, $nombre, $contraseña, $rol) {

@@ -33,7 +33,7 @@ Autoload::Autoload();
         public static function logIn($user)
         {
             session::iniciarSesion();
-            session::guardarSesion('user', $user); 
+            session::guardarSesion('usuario', $user); 
         }
 
         public static function estaLogueado($clave)
