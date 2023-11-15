@@ -1,91 +1,85 @@
 <?php
+$cierraSesion = isset($_POST['cierraSesion']);
+$mostrar = RP_Usuario::muestraUsuariosRolNulo();
+$i = 0;
 
-$mostrar = funcionesAdministrador::validaUsuario();
-$i=0;
-
-if($mostrar ==null){
-    echo "No hay usuarios pendientes de validar";
-}else{
-
+if ($mostrar == null) {
+    echo "No hay usuarios";
+} else {
     ?>
-
-    <div id="divTablaValidar">
-        <table class="tablaValidar">
-            <tr>
-                <th>ID</th>
-                <th>Usuario</th>
-                <th>Contraseña</th>
-                <th>Rol</th>
-                <th>Validar</th>
-            </tr>
-            <?php
-            
-            foreach ($mostrar as $key): 
-                
-                
-
-                ?>
+    <div id="divTablaMostrar">
+        <form method="post">
+            <table class="tablaMostrar">
                 <tr>
-                    <td><?php echo $key->getID_usuario(); ?></td>
-                    <td name="nombre<?php echo $i ?>"><?php echo $key->getNombre(); ?></td>
-                    <td><?php echo $key->getContraseña(); ?></td>
-                    <td><form method="POST">
-                        <select name="rol_usuario<?php echo $i ?>">
-                            <option value="null" <?php if($key->getRol() == '') echo 'selected'; ?>>null</option>
-                            <option value="Alumno" <?php if($key->getRol() == 'Alumno') echo 'selected'; ?>>Alumno</option>
-                            <option value="Profesor" <?php if($key->getRol() == 'Profesor') echo 'selected';?>>Profesor</option>
-                        </select></form>
-                    </td>
-                    <td><form method="POST">
-                        <input type="submit" name="btnSi<?php echo $i ?>" value="Si">
-                        <input type="submit" name="btnNo<?php echo $i ?>" value="No">
-                    </form></td>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Rol</th>
+                    <th>Editar</th>
                 </tr>
-            <?php
-            $i++;
-                endforeach; ?>
-        </table>
+                <?php
+                foreach ($mostrar as $key):
+                ?>
+                    <tr>
+                        <td><?php echo $key->getID_usuario(); ?></td>
+                        <td><?php echo $key->getNombre(); ?></td>
+                        <td><?php echo $key->getContraseña(); ?></td>
+                        <td>
+                            <select name="rol[]">
+                                <option value="nulo" <?php echo ($key->getRol() == 'nulo') ? 'selected' : ''; ?>>Nulo</option>
+                                <option value="Alumno" <?php echo ($key->getRol() == 'Alumno') ? 'selected' : ''; ?>>Alumno</option>
+                                <option value="Profesor" <?php echo ($key->getRol() == 'Profesor') ? 'selected' : ''; ?>>Profesor</option>
+                            </select>
+                            <input type="hidden" name="ID_Usuario[]" value="<?php echo $key->getID_usuario(); ?>">
+                            <input type="hidden" name="nombre[]" value="<?php echo $key->getNombre(); ?>">
+                            <input type="hidden" name="contraseña[]" value="<?php echo $key->getContraseña(); ?>">
+                        </td>
+                        <td>
+                            <input type="submit" name="btnEditar<?php echo $i ?>" value="Editar">
+                        </td>
+                    </tr>
+                    <?php
+                    $i++;
+                endforeach;
+                ?>
+            </table>
+        </form>
     </div>
     
-    <?php
-        
 
+    <?php
 }
 
+// Verifica si se ha enviado el formulario antes de procesar los datos
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    for ($j = 0; $j < $i; $j++) {
+        if (isset($_POST['btnEditar'. $j], $_POST['ID_Usuario'][$j], $_POST['nombre'][$j], $_POST['contraseña'][$j], $_POST['rol'][$j])) {
+            $ID = $_POST['ID_Usuario'][$j];
+            $nombre = $_POST['nombre'][$j];
+            $contraseña = $_POST['contraseña'][$j];
+            $rol = $_POST['rol'][$j];
 
-    for($j=0; $j<$i; $j++){
-        if(isset($_POST['btnSi'.$j])) {
-    
-            $objetoNuevo = new Usuario("27", "Pepito", "1234", "Profesor");
+            // Si todo es correcto, crea el objeto a actualizar
+            $nuevoObjeto = new Usuario($ID, $nombre, $contraseña, $rol);
 
-            RP_Usuario::ActualizaPorID($objetoNuevo->getID_usuario(), $objetoNuevo);
+            // Actualiza el usuario por ID
+            RP_Usuario::ActualizaPorID($ID, $nuevoObjeto);
 
+            echo '<script>window.location.href="?menu=validaUsuarios";</script>';
         }
-
     }
-    
-    // if(isset($_POST['btnSi0'])) {
-
-    //     echo $mostrar[0]->getNombre();
-    
-    // }
-
-
-
-
-
-    
-//  $objetoNuevo = new Usuario("27", "Pepito", "1234", "Profesor");
-
-//  RP_Usuario::ActualizaPorID($objetoNuevo->getID_usuario(), $objetoNuevo);
-
-
-
+}
+if ($cierraSesion) {
+    funcionesLogin::logOut("?menu=login");
+}
 ?>
-
+<form method="post">
+    <div id="cierraSesion">
+        <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+    </div>
+</form>
 <style>
-    #enlace{
+    #enlace {
         display: none;
     }
-   
 </style>

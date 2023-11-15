@@ -182,7 +182,7 @@ th, td, tr {
     border: 5px black solid ;
     position:absolute;
     margin-top: 3%;
-    margin-left: 32%;
+    margin-left: 22%;
     padding: 8px;
     
 }
@@ -191,5 +191,11 @@ th, td, tr {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:large;
+}
+
+#inputActualizar {
+    width: 150px;
+    height: 25px;
+    text-align: center;
 }
 

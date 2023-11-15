@@ -78,6 +78,22 @@
              
         }
 
+        public static function existeUsuario($usuario){
+
+            //Abrimos la conexión
+            $conexion=Conexion::AbreConexion();
+
+            $resultado = $conexion->query("Select nombre from usuario where nombre='$usuario'");
+
+            if ($resultado !== null){
+                return $resultado;
+            } else{
+                return "";
+            }
+
+            
+       }
+
         public static function BorraPorID($id){
 
             //Abrimos la conexion
@@ -117,6 +133,8 @@
 
             $resultado = $conexion->query("Select * from usuario where rol is null");
 
+            $array=null;
+
             
             while ($tuplas=$resultado->fetch(PDO::FETCH_OBJ)) {
  
@@ -131,10 +149,14 @@
                 $array[]=$User;
             
             }
+            if ($array==null){
+                $array="";
+            }
             return $array;
 
 
         }
+
 
     }
 

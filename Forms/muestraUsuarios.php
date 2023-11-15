@@ -44,3 +44,9 @@ if($mostrar ==null){
 }
 
 ?>
+
+<style>
+    #enlace {
+        display: none;
+    }
+</style>

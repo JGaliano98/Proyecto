@@ -16,8 +16,16 @@ if($registrar)
     $contraseña=$_POST['contraseña'];
     $rol=$_POST['rol'];
 
-    funcionesRegistro::registraUsuario($usuario,$contraseña,$rol);
-    echo "<h1>Usuario Registrado con éxito</h1>";
+    if(RP_Usuario::existeUsuario($usuario)){
+        echo "<h1>El usuario ya existe y no se puede registrar.</h1>";
+    } else {
+        funcionesRegistro::registraUsuario($usuario,$contraseña,$rol);
+        echo "<h1>Usuario Registrado con éxito</h1>";
+    }
+
+    
+
+    
 
 }
 
