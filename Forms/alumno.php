@@ -37,12 +37,12 @@ if($muestraExamen){
 
 <form method="post">
 
-<div class="divTitulo">
-    <h1>Bienvenid@ Alumn@!</h1>
+<div class="divTituloAlum">
+    <h1 id="tituloAlum">Bienvenid@ Alumn@!</h1>
 </div>
 
 <div id="cierraSesion">
-    <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+    <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
 </div>
 
 </form>

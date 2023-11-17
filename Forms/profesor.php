@@ -15,12 +15,12 @@ if($cierraSesion){
 
 <form method="post">
 
-    <div class="divTitulo">
-        <h1>Bienvenid@ Profesor!</h1>
+    <div class="divTituloProf">
+        <h1 id="tituloProf">Bienvenid@ Profesor!</h1>
     </div>
 
     <div id="cierraSesion">
-        <input type="submit" value="Cerrar Sesión" name="cierraSesion">
+        <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
     </div>
 
 </form>

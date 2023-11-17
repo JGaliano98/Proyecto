@@ -38,15 +38,15 @@
                                         <a class="nav-link" href="?menu=ver_examenes_realizados">Ver exámenes realizados</a>
                                     </li>
                                     <li class="nav-item">
-                                            <a class="nav-link" href="?menu=generar_test_aleatorio">Modificar</a>
+                                            <a class="nav-link" href="?menu=generar_test_aleatorio"></a>
                                     </li>
                                 
                                 </ul>
                                     
                                 <div id="navegador">
                                     <form class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                        <input id="barraBuscar" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                        <button id="btnBuscar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                                     </form>
                                 </div>
 
@@ -62,10 +62,10 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="?menu=muestraExamen">Muestra Alumnos <span class="sr-only"></span></a>
+                                        <a class="nav-link" href="?menu=muestraExamen">Mostrar examen <span class="sr-only"></span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="?menu=genera_examen">Genera examen</a>
+                                        <a class="nav-link" href="?menu=muestraExamenCompleto">Examen Completo</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="?menu=realiza_examen">Realizar examen</a>
@@ -81,8 +81,8 @@
                                     
                                 <div id="navegador">
                                     <form class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                        <input id="barraBuscar" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                        <button id="btnBuscar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                                     </form>
                                 </div>
 
@@ -115,8 +115,8 @@
                                     
                                 <div id="navegador">
                                     <form class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                        <input id="barraBuscar" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                        <button id="btnBuscar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                                     </form>
                                 </div>
 

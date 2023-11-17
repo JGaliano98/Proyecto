@@ -42,8 +42,6 @@ window.addEventListener("load", function(){
                             {
                                 resps[j].name += i;
                             }
-
-                            console.log(pregAux.getElementsByClassName("botonBorrar"));
                             
 
                             pregAux.getElementsByClassName("botonBorrar")[0].onclick = function()

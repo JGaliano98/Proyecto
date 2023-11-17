@@ -16,16 +16,12 @@ if($registrar)
     $contraseña=$_POST['contraseña'];
     $rol=$_POST['rol'];
 
-    if(RP_Usuario::existeUsuario($usuario)){
-        echo "<h1>El usuario ya existe y no se puede registrar.</h1>";
+    if(RP_Usuario::existeUsuario($usuario)==true){
+        ?><script>alert("El nombre de usuario ya existe. Elija otro nombre de usuario para poder registrarse.");</script><?php
     } else {
         funcionesRegistro::registraUsuario($usuario,$contraseña,$rol);
-        echo "<h1>Usuario Registrado con éxito</h1>";
+        ?><script>alert("Usuario registrado con éxito.");</script><?php
     }
-
-    
-
-    
 
 }
 
@@ -37,24 +33,23 @@ if($acceder)
 
 ?>
 
-<center>
-
-
     <div class="datos">
-        <form action = '?menu=registro' enctype="multipart/form-data"  method="post">
-            <h1>REGISTRO DE USUARIOS</h1>
-            <br>
-            <label>NOMBRE DE USUARIO: <input type="text" name="usuario" id="usuario"> </label><br><br>
-            <label>CONTRASEÑA: <input type="text" name="contraseña" id="contraseña"> </label><br><br>
-            <label>ROL: <input type="text" name="rol"></label><br><br>
-            <input type="submit" value="Registrar" name="registrarReg">
-            <input type="submit" value="Acceder" name="accederReg">
-        </form>
-
+        <div class="datosRegistro">
+            <form action = '?menu=registro' enctype="multipart/form-data"  method="post">
+                <h1 id="titulo">REGISTRO DE USUARIOS</h1>
+                <br>
+                <label id="lblusuario">NOMBRE DE USUARIO:</label><br>
+                <input type="text" id="txtUsuario" name="usuario" id="usuario"><br><br>
+                <label id="lblcontraseña">CONTRASEÑA:  </label><br>
+                <input type="text" id="txtContraseña" name="contraseña" id="contraseña"><br><br>
+                <label id="lblRol">ROL: </label><br>
+                <input type="text" id="txtRol" name="rol"><br><br>
+                <input type="submit" value="Registrar" name="registrarReg" id="btnRegistrarR">
+                <input type="submit" value="Acceder" name="accederReg" id="btnAccederR">
+            </form>
+        </div>
     </div>
 
-
-</center>
 
 <style>
     #enlace{

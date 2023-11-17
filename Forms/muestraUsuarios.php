@@ -1,4 +1,5 @@
 <?php
+$cierraSesion = isset($_POST['cierraSesion']);
 
 $mostrar = RP_Usuario::MostrarTodo();
 $i=0;
@@ -6,12 +7,9 @@ $i=0;
 if($mostrar ==null){
     echo "No hay usuarios";
 }else{
-
-
-
     ?>
+    <div class="divTablaMostrar">
 
-    <div id="divTablaMostrar">
         <table class="tablaMostrar">
             <tr>
                 <th>ID</th>
@@ -23,8 +21,6 @@ if($mostrar ==null){
             
             foreach ($mostrar as $key): 
                 
-                
-
                 ?>
                 <tr>
                     <td><?php echo $key->getID_usuario(); ?></td>
@@ -42,8 +38,16 @@ if($mostrar ==null){
         
 
 }
+if ($cierraSesion) {
+    funcionesLogin::logOut("?menu=login");
+}
 
 ?>
+<form method="post">
+<div id="cierraSesion">
+    <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
+</div>
+</form>
 
 <style>
     #enlace {

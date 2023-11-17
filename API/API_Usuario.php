@@ -8,8 +8,8 @@ Autoload::Autoload();
 
 if($_SERVER["REQUEST_METHOD"]=="GET"){
 
-    $id=$_GET['id']; //Obtenemos el ID del usuario
-    $usuario = RP_Usuario::BuscarPorID($id); //Busca el usuario por su ID
+    $id=$_GET['ID_Usuario']; //Obtenemos el ID del usuario
+    $usuario = RP_Usuario::BuscarPorIDOBJ($id); //Busca el usuario por su ID
     $usuarioApi = new stdClass(); 
     $usuarioApi -> id=$id;
     $usuarioApi -> nombre =$usuario->getNombre();
@@ -25,46 +25,38 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
 if ($_SERVER["REQUEST_METHOD"]=="PUT"){
 
     $cuerpo = file_get_contents("php://input");
-    $id=$_GET["id"];
+    $id=$_GET["ID_Usuario"];
 
     $usuario = json_decode($cuerpo);
 
     $usuarioApi = new stdClass();
 
     $usuarioApi->id=$id;
-    $usuarioApi->nombre=$nombre;
-    $usuarioApi->contraseña=$contraseña;
-    $usuarioApi->rol=$rol;
+    $usuarioApi->nombre=$usuario->nombre;
+    $usuarioApi->contraseña=$usuario->contraseña;
+    $usuarioApi->rol=$usuario->rol;
     RP_Usuario::ActualizaPorID($id,$usuarioApi);
 
-    echo "El usuario se ha actualizado correctamente.";
-
+    
 }
 
 //Para borrar
 if($_SERVER["REQUEST_METHOD"]=="DELETE"){
-    $id=$_GET["id"];
+    $id=$_GET["ID_Usuario"];
     RP_Usuario::BorraPorID($id);
     echo "Usuario borrado con éxito";
 }
 
+//Para añadir
 
-
-
-
-
-
-
-//AÑADE
-
-if ($_SERVER["REQUEST_METHOD"]=="POST"){
+if($_SERVER["REQUEST_METHOD"]=="POST"){
     $objeto=file_get_contents("php://input");
-    $user=json_decode($objeto);
-    $usuario=new stdClass();
-    $usuario->username=$user->username;
-    $usuario->password=$user->password;
-    $usuario->rol=$user->rol;
-    USER_REPOSITORY::Insert($usuario);
+    $usuario=json_decode($objeto);
+    $usuarioApi=new stdClass();
+    $usuarioApi->nombre = $usuario->nombre;
+    $usuarioApi->contraseña=$usuario->contraseña;
+    $usuarioApi->rol=$usuario->rol;
+    RP_Usuario::InsertaObjeto($usuarioApi);
 
 }
 

@@ -1,4 +1,5 @@
 <?php
+$cierraSesion = isset($_POST['cierraSesion']);
 
 $mostrar = RP_Usuario::MostrarTodo();
 $i = 0;
@@ -7,7 +8,7 @@ if ($mostrar == null) {
     echo "No hay usuarios";
 } else {
     ?>
-    <div id="divTablaMostrar">
+    <div id="divTablaBorrar">
         <table class="tablaMostrar">
             <tr>
                 <th>ID</th>
@@ -26,7 +27,7 @@ if ($mostrar == null) {
                     <td name="rol<?php echo $i ?>"><?php echo $key->getRol(); ?></td>
                     <td>
                         <form method="post">
-                            <input type="submit" name="btnBorrar<?php echo $i ?>" id="botonBorrar" value="Borrar">
+                            <input type="submit" id="btnBorrar" name="btnBorrar<?php echo $i ?>" id="botonBorrar" value="Borrar">
                         </form>
                     </td>
                 </tr>
@@ -46,7 +47,15 @@ for ($j = 0; $j < $i; $j++) {
         echo '<script>window.location.href="?menu=borraUsuarios";</script>';
     }
 }
+if ($cierraSesion) {
+    funcionesLogin::logOut("?menu=login");
+}
 ?>
+<form method="post">
+<div id="cierraSesion">
+    <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
+</div>
+</form>
 <style>
     #enlace {
         display: none;

@@ -47,13 +47,12 @@ Autoload::Autoload();
 
             if(!empty($ruta))
             {
-                header("Location: $ruta");
+                //header("Location: $ruta");
+                echo ('<script>window.location.href="'.$ruta.'";</script>');
                 exit;
             }
         }
         
-        
-        //FALTA IDENTIFICA Y USUARIOLOGUEADO
 
     }
 

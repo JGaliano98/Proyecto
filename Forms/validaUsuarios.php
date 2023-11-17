@@ -4,10 +4,13 @@ $mostrar = RP_Usuario::muestraUsuariosRolNulo();
 $i = 0;
 
 if ($mostrar == null) {
-    echo "No hay usuarios";
+    ?>
+    <script>alert("¡Lo sentimos! No hay usuarios para validar.");</script>
+    <?php
+    
 } else {
     ?>
-    <div id="divTablaMostrar">
+    <div id="divTablaValidar">
         <form method="post">
             <table class="tablaMostrar">
                 <tr>
@@ -15,7 +18,7 @@ if ($mostrar == null) {
                     <th>Usuario</th>
                     <th>Contraseña</th>
                     <th>Rol</th>
-                    <th>Editar</th>
+                    <th>Validar</th>
                 </tr>
                 <?php
                 foreach ($mostrar as $key):
@@ -35,7 +38,7 @@ if ($mostrar == null) {
                             <input type="hidden" name="contraseña[]" value="<?php echo $key->getContraseña(); ?>">
                         </td>
                         <td>
-                            <input type="submit" name="btnEditar<?php echo $i ?>" value="Editar">
+                            <input type="submit" name="btnEditar<?php echo $i ?>" value="Validar">
                         </td>
                     </tr>
                     <?php
@@ -74,10 +77,13 @@ if ($cierraSesion) {
 }
 ?>
 <form method="post">
-    <div id="cierraSesion">
-        <input type="submit" value="Cerrar Sesión" name="cierraSesion">
-    </div>
+<div id="cierraSesion">
+    <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
+</div>
 </form>
+
+
+
 <style>
     #enlace {
         display: none;

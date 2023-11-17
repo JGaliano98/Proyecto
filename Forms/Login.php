@@ -40,16 +40,22 @@ if ($acceder){
                     echo "El usuario no tiene un rol asignado. Por favor, espere a ser aceptado por el administrador.";
         
                 }elseif($rol == "Alumno"){
+                    session::iniciarSesion();
+                    session::guardarSesion('USER',$usuario);
     
                     header("Location: ?menu=alumno");
                     exit;
     
                 }elseif($rol == "Profesor"){
+                    session::iniciarSesion();
+                    session::guardarSesion('USER',$usuario);
     
                     header("Location: ?menu=profesor");
                     exit;
 
                 }elseif($rol == "Administrador"){
+                    session::iniciarSesion();
+                    session::guardarSesion('USER',$usuario);
 
                     header("Location: ?menu=administrador");
                     exit;
@@ -80,21 +86,25 @@ if ($registrarse){
 
 ?>
 
-<center>
+
     
-    <div class="datos">
+<div class="datos">
+    <div class="contenidoLogin">
         <form  action = '?menu=login' method="post">
-            <h1>AUTOESCUELA LAS FUENTEZUELAS</h1> <br>
-            <label>USUARIO: <input type="text" name="usuario" id="usuario">  </label><br><br>
-            <label>CONTRASEÑA: <input type="password" name="contraseña" id="contraseña"> </label><br><br>
-            <input type="submit" value="Acceder" name="accederLog"> <input type="submit" value="Registrarse" name="registrarse">
+            <h1 id="titulo">AUTOESCUELA FUENTEZUELAS</h1> <br>
+            <label id="lblusuario">USUARIO:</label><br>
+            <input type="text" name="usuario" id="txtusuario">  <br><br>
+            <label id="lblcontraseña">CONTRASEÑA: </label><br>
+            <input type="password" name="contraseña" id="txtcontraseña"><br><br>
+            <input type="submit" id="btnAcceder" value="Acceder" name="accederLog"> <input type="submit" id="btnRegistrarse" value="Registrarse" name="registrarse">
             <br><br>
-            <a href="http://localhost/Proyecto/index.php?menu=olvidaContraseña">¿Ha olvidado su contraseña?</a>
+            <a id="olvidoContraseña" href="http://localhost/Proyecto/index.php?menu=olvidaContraseña">¿Ha olvidado su contraseña?</a>
             <br>
         </form>
     </div>
+</div>
    
-</center>
+
 
 
 <style>

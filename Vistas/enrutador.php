@@ -28,6 +28,10 @@ if (isset($_GET['menu'])) {
         require_once $rutaBase . '/Forms/muestraExamen.php';
         
     }
+    if ($_GET['menu'] == "muestraExamenCompleto") {
+        require_once $rutaBase . '/Forms/muestraExamenCompleto.php';
+        
+    }
     if ($_GET['menu'] == "muestraUsuarios") {
         require_once $rutaBase . '/Forms/muestraUsuarios.php';
         

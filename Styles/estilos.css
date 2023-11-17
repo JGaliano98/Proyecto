@@ -15,7 +15,7 @@ body{
 
 }
 
-
+/* ESTILOS PARA EL LOGIN  */
 
 .datos {
     border: 5px solid black; /* Establece el grosor, el tipo y el color del borde */
@@ -29,9 +29,49 @@ body{
     background-color: #57BA54;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    box-shadow: 2px 2px 4px #555;
+   
 }
 
- .fondo {
+#titulo{
+    text-align: center;
+}
+#txtusuario, #txtcontraseña{
+    border: 3px black solid;
+    width: 350px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+
+
+
+}
+#btnAcceder{
+    margin-left: 18%;
+    width: 100px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+
+#btnRegistrarse{
+    margin-left: 5%;
+    width: 100px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+#olvidoContraseña{
+    
+    margin-left: 18%;
+    text-decoration: none;
+}
+
+
+
+.fondo {
 
     
     position: absolute;
@@ -45,13 +85,51 @@ body{
     height: 100%; /* Altura del div al 100% de la altura de la ventana */
 } 
 
+
+#txtUsuario, #txtContraseña, #txtRol{
+    border: 3px black solid;
+    width: 350px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+}
+
+#btnAccederR{
+    margin-left: 5%;
+    width: 100px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+#btnRegistrarR{
+ margin-left: 18%;
+    width: 100px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+
+
+
+
+
 #cierraSesion{
 
-    width: 100px; /* Ancho del div */
-  height: 100px; /* Alto del div */
-  position: absolute; /* Fijar la posición del div */
-  top: 30%; /* Alineación en la parte superior */
-  right: 35px; 
+    width: auto; /* Ancho del div */
+    height: auto; /* Alto del div */
+    position: absolute; /* Fijar la posición del div */
+    top: 30%; /* Alineación en la parte superior */
+    right: 35px; 
+    border: 3px black solid;
+
+}
+#btnCierraSesion{
+    width: 120px;
+    height: 50px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 
 }
 
@@ -86,8 +164,10 @@ body{
     position: absolute;
     border: 4px black solid;
     width: 50%;
+    height: 50%;
     left: 25%;
     background-color: #57BA54;
+    margin-top: 5%;
 
 }
 #credenciales{
@@ -101,8 +181,21 @@ body{
     position: absolute;
     top: 10%;
     right: -15%;
+    width: 25%;
 
 }
+#btnBuscar{
+    width: 60px;
+    height: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+#barraBuscar{
+    width: 170px;
+    height: 26px;
+
+}
+
 #header{
 
     background-color: #57BA54;
@@ -127,14 +220,14 @@ body{
     
 }
 
- /* Estilo para la lista horizontal */
+ /* Estilos para la lista horizontal */
  #header .navbar-nav {
     display: flex;
-    flex-direction: row; /* Establece la dirección horizontal */
+    flex-direction: row;
 }
 
 #header .navbar-nav .nav-item {
-    margin-right: 5%; /* Agrega un espacio entre los elementos */
+    margin-right: 5%; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:large;
     list-style-type: none;
@@ -149,12 +242,12 @@ body{
 }
 
 #header .navbar-nav .nav-item a:visited {
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
     color: #000; /* Establece el color de texto para los enlaces visitados */
 }
 
 #header .navbar-nav .nav-item a:hover {
-    text-decoration: underline; /* Puede subrayar el enlace al pasar el ratón por encima */
+    text-decoration: underline; /* Para subrayar el enlace al pasar el ratón por encima */
     color: rgb(14, 13, 95); /* Establece el color de texto para los enlaces al pasar el ratón por encima */
 }
    
@@ -166,15 +259,104 @@ th, td, tr {
 
 }
 
+
+/* ADMINISTADOR */
+.divTituloAdmin{
+    border: 3px black solid;
+    background-image: url(./imagenes/fondo-autoescuela-campus.jpg);
+    position: absolute;
+    margin-left:30%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    padding: 5%;
+
+}
+.divTituloProf{
+    border: 3px black solid;
+    background-image: url(./imagenes/fondo-autoescuela-campus.jpg);
+    position: absolute;
+    margin-left:32%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    padding: 5%;
+}
+.divTituloAlum{
+    border: 3px black solid;
+    background-image: url(./imagenes/fondo-autoescuela-campus.jpg);
+    position: absolute;
+    margin-left:32%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    padding: 5%;
+}
+#tituloAdministrador, #tituloProf, #tituloAlum{
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
 #divTablaValidar{
 
     background-color: #57BA54;
-    border: 1px black solid ;
+    border: 5px black solid ;
     position:absolute;
     margin-top: 5%;
     margin-left: 35%;
     padding: 8px;
 }
+#divTablaActualizar{
+    background-color: #57BA54;
+    border: 5px black solid ;
+    position:absolute;
+    margin-top: 5%;
+    margin-left: 22%;
+    padding: 8px;
+    overflow-y: auto;
+    width: 59%; 
+    max-height: 60%; 
+}
+#divTablaBorrar{
+    background-color: #57BA54;
+    border: 5px black solid ;
+    position:absolute;
+    margin-top: 5%;
+    margin-left: 32%;
+    padding: 8px;
+    overflow-y: auto;
+    width: 36%; 
+    max-height: 60%; 
+
+}
+
+.divTablaMostrar{
+    background-color: #57BA54;
+    border: 5px black solid ;
+    position:absolute;
+    margin-top: 5%;
+    margin-left: 35%;
+    overflow-y: auto;
+    padding: 8px;
+    width: 29%; 
+    max-height: 60%; 
+
+}
+#btnEditar{
+    width: 80px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+#btnBorrar{
+    width: 80px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+}
+
 
 #divTablaMostrar{
 

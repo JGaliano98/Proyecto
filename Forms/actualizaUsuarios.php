@@ -1,4 +1,6 @@
 <?php
+$cierraSesion = isset($_POST['cierraSesion']);
+
 $mostrar = RP_Usuario::MostrarTodo();
 $i = 0;
 
@@ -6,7 +8,7 @@ if ($mostrar == null) {
     echo "No hay usuarios";
 } else {
     ?>
-    <div id="divTablaMostrar">
+    <div id="divTablaActualizar">
         <form method="post">
             <table class="tablaMostrar">
                 <tr>
@@ -14,7 +16,7 @@ if ($mostrar == null) {
                     <th>Usuario</th>
                     <th>Contraseña</th>
                     <th>Rol</th>
-                    <th>Eliminar</th>
+                    <th>Editar</th>
                 </tr>
                 <?php
                 $nuevoObjeto = array(); // Inicializa el array antes del bucle
@@ -27,7 +29,7 @@ if ($mostrar == null) {
                         <td><input type="text" id="inputActualizar" name="contraseña[]" value="<?php echo $key->getContraseña(); ?>"></td>
                         <td><input type="text" id="inputActualizar" name="rol[]" value="<?php echo $key->getRol(); ?>"></td>
                         <td>
-                            <input type="submit" name="btnEditar<?php echo $i ?>" value="Editar">
+                            <input type="submit" id="btnEditar" name="btnEditar<?php echo $i ?>" value="Editar">
                         </td>
                     </tr>
                     <?php
@@ -67,7 +69,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+if ($cierraSesion) {
+    funcionesLogin::logOut("?menu=login");
+}
 ?>
+<form method="post">
+<div id="cierraSesion">
+    <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
+</div>
+</form>
 <style>
     #enlace {
         display: none;
