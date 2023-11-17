@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Autoescuela Fuentezuelas</title>
     <link rel="stylesheet" href="Styles/estilos.css">
-    <script src="../JS/examen.js"></script>
+    <script src="./JS/examen.js"></script>
 </head>
 
 <body id = "fondo">

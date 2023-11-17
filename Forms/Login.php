@@ -1,8 +1,5 @@
 <?php
 
-// require_once "../Helpers/funcionesLogin.php";
-// require_once "../Repository/RP_Usuario.php";
-// require_once "../Entities/Usuario.php";
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/Proyecto/Helpers/Autoload.php';
 Autoload::Autoload();
@@ -36,8 +33,8 @@ if ($acceder){
                 $rol=$dato->getRol();
                 
                 if ($rol == null){
+                    ?><script>alert("El usuario no tiene un rol asignado. Por favor, espere a ser aceptado por el administrador.");</script><?php
 
-                    echo "El usuario no tiene un rol asignado. Por favor, espere a ser aceptado por el administrador.";
         
                 }elseif($rol == "Alumno"){
                     session::iniciarSesion();
@@ -67,7 +64,8 @@ if ($acceder){
         } 
         elseif ($resultado === false){
 
-            echo '<h1 id="credenciales">Credenciales inválidas.</h1>';   
+            ?><script>alert("Credenciales inválidas.");</script><?php
+           
         }
 
     }

@@ -73,9 +73,6 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="?menu=ver_examenes_realizados">Ver exámenes realizados</a>
                                     </li>
-                                    <li class="nav-item">
-                                            <a class="nav-link" href="?menu=generar_test_aleatorio">Modificar</a>
-                                    </li>
                                 
                                 </ul>
                                     

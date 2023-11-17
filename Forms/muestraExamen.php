@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="JS/examen.js"></script>
-</head>
-<body>
+<?php
+$cierraSesion = isset($_POST['cierraSesion']);
+?>
 
-    <div id="examen">
+<div id="examen">
 
-    </div>
-</body>
-</html>
+</div>
+
+<?php
+if ($cierraSesion) {
+    funcionesLogin::logOut("?menu=login");
+}
+?>
+<form method="post">
+<div id="cierraSesion">
+    <input type="submit" id="btnCierraSesion" value="Cerrar Sesión" name="cierraSesion">
+</div>
+</form>
+
 
 <style>
     #enlace{

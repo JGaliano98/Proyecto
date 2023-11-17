@@ -38,7 +38,7 @@ if ($mostrar == null) {
                             <input type="hidden" name="contraseña[]" value="<?php echo $key->getContraseña(); ?>">
                         </td>
                         <td>
-                            <input type="submit" name="btnEditar<?php echo $i ?>" value="Validar">
+                            <input id="btnValidar" type="submit" name="btnEditar<?php echo $i ?>" value="Validar">
                         </td>
                     </tr>
                     <?php

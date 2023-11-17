@@ -1,20 +1,17 @@
 window.addEventListener("load", function(){
 
-    var anterior = document.getElementById("botonAnterior");
-
-    var siguiente = document.getElementById("botonSiguiente");
-
-    var terminar = document.getElementById("botonTerminarTest");
-
     var divpreguntas = document.getElementById("Enunciado");
 
     var foto = document.getElementById("foto");
 
     var divExamen=document.getElementById("examen");
 
+    var indexPreguntaActual = 0;
+    const coleccionPreguntas = [];
+
     
 
-    fetch("../Proyecto/Forms/generaPreguntas.html")
+    fetch("../Proyecto/Forms/generaPreguntas.html") //Plantilla de las preguntas
             .then(x=>x.text())
             .then(y=>{
                 
@@ -29,6 +26,10 @@ window.addEventListener("load", function(){
                         for (let i=0; i<y.length;i++){
 
                             var pregAux=pregunta.cloneNode(true); //CloneNode hace copia exacta de la estructura de la pregunta. Con el true, haces tambien copia del contenido de la pregunta.
+                            if (i>0){
+                               pregAux.classList.add("oculta");
+                            }
+                            coleccionPreguntas.push(pregAux);
                             pregAux.getElementsByClassName("enunciado")[0].innerHTML=y[i].enunciado;
                             var foto = document.createElement("img"); //Creamos el elemento imagen
                             foto.src = y[i].URL; //Cogemos la foto y la mostramos.
@@ -58,6 +59,23 @@ window.addEventListener("load", function(){
                                     respuestasMar[i].checked = false;
                                 }
                             } 
+
+                            pregAux.querySelector(".anterior").addEventListener("click", function(){
+                                if(indexPreguntaActual<(coleccionPreguntas.length-1)){
+                                    coleccionPreguntas[indexPreguntaActual].classList.add("oculta");
+                                    indexPreguntaActual--;
+                                    coleccionPreguntas[indexPreguntaActual].classList.remove("oculta");
+                                }
+
+                            });
+
+                            pregAux.querySelector(".siguiente").addEventListener("click", function(){
+                                if (indexPreguntaActual<(coleccionPreguntas.length-1)){
+                                    coleccionPreguntas[indexPreguntaActual].classList.add("oculta");
+                                    indexPreguntaActual++;
+                                    coleccionPreguntas[indexPreguntaActual].classList.remove("oculta");
+                                }
+                            });
 
 
                             divExamen.appendChild(pregAux);
